@@ -1,0 +1,120 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.menu-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  z-index: 2; /* 메뉴 버튼이 비디오 위에 표시되도록 */
+  cursor: pointer;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: -250px; /* 메뉴 초기 위치 */
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  transition: left 0.3s; /* 애니메이션 효과 */
+  z-index: 2; /* 비디오 위에 메뉴가 표시되도록 */
+  padding-top: 60px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 10px 20px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* 콘텐츠가 비디오 위에 표시되도록 */
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* 콘텐츠 배경 반투명 */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.search-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2; /* 검색 컨테이너가 비디오 위에 표시되도록 */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.search-container button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 0 3px 3px 0;
+  outline: none;
+}
+
+.search-container button:hover {
+  background: #555;
+}

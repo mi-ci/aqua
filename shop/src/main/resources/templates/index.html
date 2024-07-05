@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Background with Menu</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+<div class="video-container" onclick="closeMenu(event)">
+    <video autoplay muted loop id="background-video">
+        <source src="/static/videos/보라카이.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="menu-button" id="menu-button" onclick="toggleMenu(event)">
+        ☰
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button>검색</button>
+    </div>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="#">BAGS</a></li>
+            <li><a href="#">ACCESSORIES</a></li>
+            <li><a href="#">APPAREL</a></li>
+            <li><a href="#">ABOUT FREITAG</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">F-EDERATION</a></li>
+            <li><a href="#">CONTACT CENTER</a></li>
+            <li><a href="#">STORES</a></li>
+            <li><a href="/login">LOGIN</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <h1>TO THE MONO[PA6] BACKPACK</h1>
+</div>
+<script>
+    function toggleMenu(event) {
+      event.stopPropagation(); // 이벤트 전파 중지
+      var menu = document.getElementById("menu");
+      var menuButton = document.getElementById("menu-button");
+      if (menu.style.left === "0px" || menu.style.left === "") {
+        menu.style.left = "-250px";
+        menuButton.style.display = "block";
+      } else {
+        menu.style.left = "0px";
+        menuButton.style.display = "none";
+      }
+    }
+
+    function closeMenu(event) {
+      var menu = document.getElementById("menu");
+      var menuButton = document.getElementById("menu-button");
+      if (menu.style.left === "0px") {
+        menu.style.left = "-250px";
+        menuButton.style.display = "block";
+      }
+    }
+
+    // 메뉴 항목 클릭 시 메뉴 닫기
+    document.querySelectorAll(".menu a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var menu = document.getElementById("menu");
+        var menuButton = document.getElementById("menu-button");
+        menu.style.left = "-250px";
+        menuButton.style.display = "block";
+      });
+    });
+</script>
+</body>
+</html>
